@@ -1,4 +1,4 @@
-exec feh --bg-scale  -g 1920x1440 '/home/pragma/Pictures/mountain.jpg'
+exec feh --bg-scale  -g 1920x1440 '/home/user/Pictures/pic.jpg'
 exec --no-startup-id compton
 
 # start a terminal
