@@ -1,0 +1,67 @@
+# /etc/i3status.conf
+
+general {
+    output_format = "i3bar"
+    markup = pango
+	colors = false
+	interval = 2
+}
+
+order += "volume master"
+order += "load"
+order += "cpu_usage"
+order += "cpu_temperature 0"
+order += "disk /"
+order += "disk /media/media"
+order += "wireless wlo1"
+order += "battery 0"
+order += "tztime local"
+#order += "ipv6"
+
+
+volume master {
+#	format = " ♪: %volume  " 
+	device = "default"
+	mixer = "Master"
+	mixer_idx = 0
+	# termsyn font
+	format = "À %volume "
+}
+
+load {
+#	format = " Δ: %1min "
+	# termsyn font
+	format = "<span background='#8b0000'> CPUΔ: %1min </span>"
+}
+
+cpu_usage {
+	format = "<span background='#8b0000'> CPU usage: %usage </span>"
+}
+
+cpu_temperature 0 {
+	format = "<span background='#8b0000'> CPU %degrees °C </span>"
+	path = "/sys/class/thermal/thermal_zone0/temp"
+
+}
+
+disk "/" {
+	format = "<span background='#ff9966'> Free: %avail </span>" 
+}
+
+
+wireless wlo1 {
+	format_up = "<span background='#0f4d92'> %essid </span>"
+
+}
+
+
+battery 0 {
+        format = "<span background='#008080'> %status %percentage %remaining </span>"
+}
+
+
+tztime local {
+#	format = "<span background='#002fa7'> %h-%d %H:%M ☰  </span>"
+	# termsyn font
+	format = " %d %h  %H:%M "
+}
